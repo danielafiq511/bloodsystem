@@ -68,12 +68,12 @@ git config --global user.email "your.email@example.com"
 -  Open Command Prompt in that folder
 - Copy and paste this command:
 ```bash
-git clone https://github.com/danielafiq511/bloodbasesystem.git
+git clone https://github.com/danielafiq511/bloodsystem.git
 ```
 
 4. Set up the project
 - Open Laragon
-- Open phpMyAdmin and create a new database named 'bloodbase'
+- Open phpMyAdmin and create a new database named 'bloodbases'
 - Go to project folder, open the terminal and copy this
 ```bash
 copy config\app_local.example.php config\app_local.php
@@ -83,7 +83,7 @@ copy config\app_local.example.php config\app_local.php
 <?php
 'username' => 'root'
 'password' => ''
-'database' => 'bloodbase'
+'database' => 'bloodbases'
 ```
 5. Install project
 ```bash
@@ -94,7 +94,7 @@ bin/cake migrations seed --seed UsersSeed
 bin/cake cache clear_all
 ```
 ### Test the website
-1. Go to https://localhost/bloodbase
+1. Go to https://localhost/bloodbases
 2. Login with:
 - Admin: test123@localhost.com / test123 (ni abaikan dulu)
 - User: make registration
