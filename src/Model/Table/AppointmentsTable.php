@@ -51,8 +51,7 @@ class AppointmentsTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->scalar('donorID')
-            ->maxLength('donorID', 5)
+            ->integer('donorID')
             ->requirePresence('donorID', 'create')
             ->notEmptyString('donorID');
 
@@ -87,8 +86,7 @@ class AppointmentsTable extends Table
             ->notEmptyString('age');
 
         $validator
-            ->scalar('hospitalID')
-            ->maxLength('hospitalID', 5)
+            ->integer('hospitalID')
             ->requirePresence('hospitalID', 'create')
             ->notEmptyString('hospitalID');
 

@@ -20,15 +20,15 @@ class AppointmentsFixture extends TestFixture
         $this->records = [
             [
                 'appointmentID' => 1,
-                'donorID' => 'Lor',
+                'donorID' => 1,
                 'donorName' => 'Lorem ipsum dolor sit amet',
                 'nric' => 'Lorem ipsu',
                 'phoneNumber' => 'Lorem ipsu',
                 'gender' => 'Lorem ipsum dolor sit amet',
                 'age' => 'L',
-                'hospitalID' => 'Lor',
+                'hospitalID' => 1,
                 'hospitalName' => 'Lorem ipsum dolor sit amet',
-                'dateTime' => '2025-07-17 16:38:06',
+                'dateTime' => '2025-07-18 05:57:47',
             ],
         ];
         parent::init();

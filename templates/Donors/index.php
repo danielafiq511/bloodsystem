@@ -4,6 +4,30 @@
  * @var iterable<\App\Model\Entity\Donor> $donors
  */
 ?>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-container">
+      <img src="imgs/BloodBase.png" alt="Logo" class="navbar-logo" />
+      <a class="logo">Blood Base</a>
+    </div>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="http://localhost/bloodbases/" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="http://localhost/bloodbases/donors" class="nav-link"><i class="fas fa-user"></i> Donors</a></li>
+      <li><a href="http://localhost/bloodbases/hospitals" class="nav-link"><i class="fas fa-hospital"></i> Hospitals</a></li>
+      <li><a href="http://localhost/bloodbases/appointments" class="nav-link"><i class="fas fa-calendar-alt"></i> Appointments</a></li>
+      <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> About Us</a></li>
+      <li><a href="#" class="nav-link donate-btn"><i class="fas fa-tint"></i> Donate Now</a></li>
+    </ul>
+    
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
 <div class="blood-system-container">
     <div class="blood-system-main">
         <div class="blood-system-card">
@@ -98,11 +122,121 @@
 </div>
 
 <style>
+/* Updated Navbar Styles */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e293b;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-link i {
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  background-color: #f8fafc;
+  color: #dc2626;
+}
+
+.donate-btn {
+  background-color: #dc2626;
+  color: white !important;
+}
+
+.donate-btn:hover {
+  background-color: #b91c1c;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #1e293b;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-menu.active {
+    transform: translateY(0);
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
 /* Base styles from previous design */
 .blood-system-container {
     display: flex;
     min-height: 100vh;
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    padding-top: 70px; /* Added to account for fixed navbar */
 }
 
 .blood-system-main {
@@ -326,3 +460,10 @@
     }
 }
 </style>
+
+<script>
+// Mobile menu toggle
+document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+  document.getElementById('navMenu').classList.toggle('active');
+});
+</script>

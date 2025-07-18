@@ -9,13 +9,13 @@ use Cake\ORM\Entity;
  * Appointment Entity
  *
  * @property int $appointmentID
- * @property string $donorID
+ * @property int $donorID
  * @property string $donorName
  * @property string $nric
  * @property string $phoneNumber
  * @property string $gender
  * @property string $age
- * @property string $hospitalID
+ * @property int $hospitalID
  * @property string $hospitalName
  * @property \Cake\I18n\DateTime $dateTime
  */
