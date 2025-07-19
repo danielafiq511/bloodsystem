@@ -87,7 +87,7 @@
                                 'label' => ['text' => 'Gender', 'class' => 'form-label'],
                                 'templateVars' => ['icon' => 'fas fa-venus-mars'],
                                 'class' => 'form-input large-input',
-                                'options' => ['Male' => 'Male', 'Female' => 'Female', 'Other' => 'Other']
+                                'options' => ['' => '', 'Male' => 'Male', 'Female' => 'Female', 'Other' => 'Other']
                             ]) ?>
                             <?= $this->Form->control('age', [
                                 'label' => ['text' => 'Age', 'class' => 'form-label'],

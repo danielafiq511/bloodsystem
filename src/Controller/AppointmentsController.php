@@ -41,12 +41,13 @@ class AppointmentsController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
+     public function add()
     {
+        
         $appointment = $this->Appointments->newEmptyEntity();
         if ($this->request->is('post')) {
             $appointment = $this->Appointments->patchEntity($appointment, $this->request->getData());
-            if ($this->Appointments->save($appointment)) {
+           if ($this->Appointments->save($appointment)) {
                 $this->Flash->success(__('The appointment has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -54,6 +55,28 @@ class AppointmentsController extends AppController
             $this->Flash->error(__('The appointment could not be saved. Please, try again.'));
         }
         $this->set(compact('appointment'));
+
+{
+    $appointment = $this->Appointments->newEmptyEntity();
+    
+    // Load donors data
+    $donors = $this->Appointments->Donors->find('list')->all();
+    
+    // Load hospitals data
+    $hospitals = $this->Appointments->Hospitals->find('list')->all();
+    
+    // Pass data to view
+    $this->set(compact('appointment', 'donors', 'hospitals'));
+    
+    if ($this->request->is('post')) {
+        $appointment = $this->Appointments->patchEntity($appointment, $this->request->getData());
+        if ($this->Appointments->save($appointment)) {
+            $this->Flash->success(__('The appointment has been saved.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('The appointment could not be saved. Please, try again.'));
+    }
+}
     }
 
     /**

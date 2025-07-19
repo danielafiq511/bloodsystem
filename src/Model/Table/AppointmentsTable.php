@@ -40,6 +40,10 @@ class AppointmentsTable extends Table
         $this->setTable('appointments');
         $this->setDisplayField('donorID');
         $this->setPrimaryKey('appointmentID');
+
+        $this->belongsTo('Donors');
+$this->belongsTo('Hospitals');
+
     }
 
     /**

@@ -69,7 +69,7 @@
                             <?= $this->Form->control('gender', [
                                 'class' => 'blood-system-select',
                                 'label' => ['class' => 'blood-system-label', 'text' => 'Gender'],
-                                'options' => ['Male' => 'Male', 'Female' => 'Female', 'Other' => 'Other']
+                                'options' => ['' => '', 'Male' => 'Male', 'Female' => 'Female', 'Other' => 'Other']
                             ]) ?>
                         </div>
                         
@@ -78,6 +78,7 @@
                                 'class' => 'blood-system-select',
                                 'label' => ['class' => 'blood-system-label', 'text' => 'Blood Type'],
                                 'options' => [
+                                    '' => '',
                                     'A+' => 'A+', 'A-' => 'A-',
                                     'B+' => 'B+', 'B-' => 'B-',
                                     'AB+' => 'AB+', 'AB-' => 'AB-',
